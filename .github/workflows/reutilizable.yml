@@ -4,7 +4,7 @@ name: demo github actions2
 on:
   workflow_call:
   push:
-    branches: ["devops-simple-node3"]
+    branches: ["devops-simple-node1"]
 jobs:
   init:
     uses: roxsross/roxs-templates/.github/workflows/init.yml@master
