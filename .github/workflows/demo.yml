@@ -1,5 +1,5 @@
 
-name: demo github actions
+name: demo github actions2
 
 on:
   workflow_call:
