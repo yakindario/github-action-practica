@@ -5,9 +5,9 @@ on:
   workflow_call:
   push:
     branches: ["devops-simple-node3"]
-env:
-  REGISTRY : ${{ secrets.DOCKER_USERNAME }}
-  REPOSITORY: ${{github.event.repository.name}}
 jobs:
-  devops:
-    uses: roxsross/roxs-templates/.github/workflows/demo.yml@master
+  init:
+    uses: roxsross/roxs-templates/.github/workflows/init.yml@master
+  test:
+    needs: init
+    uses: roxsross/roxs-templates/.github/workflows/test.yml@master
