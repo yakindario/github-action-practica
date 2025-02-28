@@ -35,6 +35,8 @@ jobs:
         uses: actions/setup-node@v4.2.0
         with:
           node-version: 21
+      - name: instalar dependencias
+        run: npm install          
       - name: Run test
         run: npm run test
         
