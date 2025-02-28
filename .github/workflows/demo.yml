@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  ci:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,9 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: saludo
-        run: echo "hello , ${{ github.actor }}" > info.txt 
-      - name: imprimir texto
-        run: cat info.txt
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.2.0
+        with:
+          node-version: 21
+      - name: instalar dependencias
+        run: npm install
+      - name: Ejecutar test
+        run: npm run test
