@@ -4,7 +4,7 @@ name: demo github actions2
 on:
   workflow_call:
   push:
-    branches: ["devops-simple-node1"]
+    branches: ["devops-simple-node3"]
 env:
   REGISTRY : ${{ secrets.DOCKER_USERNAME }}
   REPOSITORY: ${{github.event.repository.name}}
