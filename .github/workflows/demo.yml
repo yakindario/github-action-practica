@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Saludos 
-        run: echo "hello, {{ github.actor }}" > info.txt
+        run: echo "hello, ${{ github.actor }}" > info.txt
       - name: Imprimir Texto
         run: cat info.txt
 
